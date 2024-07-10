@@ -8,10 +8,10 @@ import (
 )
 
 // SupportedRemoteProviders are universally supported remote providers.
-var SupportedRemoteProviders = []string{"etcd", "etcd3", "consul", "firestore", "nats"}
+var SupportedRemoteProviders = []string{"etcd", "etcd3", "consul", "firestore", "nats", "zookeeper"}
 
 func resetRemote() {
-	SupportedRemoteProviders = []string{"etcd", "etcd3", "consul", "firestore", "nats"}
+	SupportedRemoteProviders = []string{"etcd", "etcd3", "consul", "firestore", "nats", "zookeeper"}
 }
 
 type remoteConfigFactory interface {

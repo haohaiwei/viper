@@ -12,7 +12,7 @@ import (
 	"os"
 	"strings"
 
-	crypt "github.com/sagikazarmark/crypt/config"
+	crypt "github.com/haohaiwei/crypt/config"
 
 	"github.com/spf13/viper"
 )
@@ -93,6 +93,8 @@ func getConfigManager(rp viper.RemoteProvider) (crypt.ConfigManager, error) {
 			cm, err = crypt.NewFirestoreConfigManager(endpoints, kr)
 		case "nats":
 			cm, err = crypt.NewNatsConfigManager(endpoints, kr)
+		case "zookeeper":
+			cm, err = crypt.NewZookeeperConfigManager([]string{rp.Endpoint()}, kr)
 		default:
 			cm, err = crypt.NewConsulConfigManager(endpoints, kr)
 		}
@@ -106,6 +108,8 @@ func getConfigManager(rp viper.RemoteProvider) (crypt.ConfigManager, error) {
 			cm, err = crypt.NewStandardFirestoreConfigManager(endpoints)
 		case "nats":
 			cm, err = crypt.NewStandardNatsConfigManager(endpoints)
+		case "zookeeper":
+			cm, err = crypt.NewStandardZookeeperConfigManager([]string{rp.Endpoint()})
 		default:
 			cm, err = crypt.NewStandardConsulConfigManager(endpoints)
 		}
