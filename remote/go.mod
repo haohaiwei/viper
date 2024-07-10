@@ -1,12 +1,12 @@
-module github.com/spf13/viper/remote
+module github.com/haohaiwei/viper/remote
 
 go 1.21
 
-replace github.com/spf13/viper => ../
+replace github.com/haohaiwei/viper => ../
 
 require (
 	github.com/haohaiwei/crypt v0.22.0
-	github.com/spf13/viper v1.20.0-alpha.5
+	github.com/haohaiwei/viper v1.20.0
 )
 
 require (
