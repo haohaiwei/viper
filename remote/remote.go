@@ -94,7 +94,7 @@ func getConfigManager(rp viper.RemoteProvider) (crypt.ConfigManager, error) {
 		case "nats":
 			cm, err = crypt.NewNatsConfigManager(endpoints, kr)
 		case "zookeeper":
-			cm, err = crypt.NewZookeeperConfigManager([]string{rp.Endpoint()}, kr)
+			cm, err = crypt.NewZookeeperConfigManager(endpoints, kr)
 		default:
 			cm, err = crypt.NewConsulConfigManager(endpoints, kr)
 		}
@@ -109,7 +109,7 @@ func getConfigManager(rp viper.RemoteProvider) (crypt.ConfigManager, error) {
 		case "nats":
 			cm, err = crypt.NewStandardNatsConfigManager(endpoints)
 		case "zookeeper":
-			cm, err = crypt.NewStandardZookeeperConfigManager([]string{rp.Endpoint()})
+			cm, err = crypt.NewStandardZookeeperConfigManager(endpoints)
 		default:
 			cm, err = crypt.NewStandardConsulConfigManager(endpoints)
 		}
