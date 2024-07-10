@@ -6,7 +6,7 @@ replace github.com/haohaiwei/viper => ../
 
 require (
 	github.com/haohaiwei/crypt v0.22.0
-	github.com/haohaiwei/viper v1.20.0
+	github.com/haohaiwei/viper v1.20.0-zk
 )
 
 require (
