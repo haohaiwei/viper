@@ -5,8 +5,8 @@ go 1.21
 replace github.com/haohaiwei/viper => ../
 
 require (
-	github.com/haohaiwei/crypt v0.22.0
-	github.com/haohaiwei/viper v1.20.0-zk
+	github.com/haohaiwei/crypt v0.23.0
+	github.com/haohaiwei/viper v1.23.0
 )
 
 require (
